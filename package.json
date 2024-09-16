@@ -17,7 +17,11 @@
     "ejs": "^3.1.6",
     "express": "^4.17.3",
     "express-ejs-layouts": "^2.5.1",
-    "pg": "^8.7.3",
-    "sequelize": "^6.16.3"
+    "ig": "^0.0.5",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.4",
+    "pg": "^8.8.0",
+    "sequelize": "^6.25.3",
+    "sequelize-cli": "^6.5.1"
   }
 }

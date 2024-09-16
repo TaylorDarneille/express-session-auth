@@ -1,0 +1,152 @@
+<br><h1><%= student.name %></h1>
+
+<form class="mb-3" action="/users/course/<%= courseId %>/comments/<%= student.id %>" method="post">
+    <label for="Input1" class="form-label1">Week No.</label><br>
+    <input type="text" class="form-control1" id="Input1" placeholder="Ex. week 35" name="week">
+      <br><br>
+        <label for="Textarea1" class="form-label2">Feedback:</label><br>
+        <textarea class="form-control2" id="Textarea1" rows="10" cols="80" placeholder="Positive Feedbacks only" name="feedback"></textarea>
+    <br>
+        <button class="btn" type="submit">Submit</button>
+</form>
+<br>
+
+
+<% if (student.comments) { %>
+  <% student.comments.forEach(c => { %>
+    <div class="feedback">
+    <h1> <%= c.feedback %> </h1>
+    <p> Written by: <%= c.userName %> </p>
+    <p> Week: <%= c.week %> </p>
+    <p><%= moment(c.createdAt).calendar() %> </p>
+  </div> 
+  
+<br>
+    <form action="/users/course/<%= courseId %>/comments/<%= student.id %>?_method=DELETE" method="POST">
+      <input type="hidden" value="<%= c.feedback %>" name="feedback">
+      <input type="hidden" value="<%= c.week %>" name="week">
+      <button class="btn" type="submit" class="btn2">Delete</button><br><br>
+    </form><br>
+    <% }) %>
+    
+    <% } %>
+    
+    <style>
+      label {
+        color: white;
+      }
+
+      .feedback {
+        background: linear-gradient(135deg, #5335cf 0%, #de005e 25%, #f66e48 50%, #de005e 75%, #5335cf 100%);
+        text-align: center;
+        font-size: 20px;
+  background: -webkit-linear-gradient(135deg, #5335cf 0%, #de005e 25%, #f66e48 50%, #de005e 75%, #5335cf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: solid #5335cf;
+  text-align: center;
+  font-family: cursive;
+  font-size: 24px;
+  border: 10px solid black;
+  margin: 150px;
+  min-height: 3em;
+  width: 60%;
+  resize: both;
+ 
+  background: linear-gradient(to top, rgba(#cffffe, 0.3), rgba(#f9f7d9, 0.3), rgba(#fce2ce, 0.3), rgba(#ffc1f3, 0.3));
+  border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23cffffe' /%3E%3Cstop offset='25%25' stop-color='%23f9f7d9' /%3E%3Cstop offset='50%25' stop-color='%23fce2ce' /%3E%3Cstop offset='100%25' stop-color='%23ffc1f3' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3'/%3E %3C/svg%3E") 1;
+}
+
+      h1 {
+        background: linear-gradient(135deg, #5335cf 0%, #de005e 25%, #f66e48 50%, #de005e 75%, #5335cf 100%);
+        text-align: center;
+        font-size: 60px;
+  background: -webkit-linear-gradient(135deg, #5335cf 0%, #de005e 25%, #f66e48 50%, #de005e 75%, #5335cf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    }
+
+      body {
+
+        text-align: center;
+        display: grid;
+  place-items: center;
+  height: 100vh;
+  /* overflow: hidden; */
+      }
+  .btn {
+  position: relative;
+  display: inline-block;
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  color: #fff;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 30px;
+  z-index: 1;
+}
+ 
+.btn:hover {
+  animation: animate 8s linear infinite;
+}
+ 
+@keyframes animate {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 400%;
+  }
+}
+ 
+.btn:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  bottom: -5px;
+  left: -5px;
+  z-index: -1;
+  background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+  background-size: 400%;
+  border-radius: 40px;
+  opacity: 0;
+  transition: .5s;
+}
+ 
+.btn:hover:before {
+  filter: blur(20px);
+  opacity: 1;
+  animation: animate 8s linear infinite;
+}
+.mb-3 {
+
+  background: linear-gradient(135deg, #5335cf 0%, #de005e 25%, #f66e48 50%, #de005e 75%, #5335cf 100%);
+        text-align: center;
+        font-size: 20px;
+  background: -webkit-linear-gradient(135deg, #5335cf 0%, #de005e 25%, #f66e48 50%, #de005e 75%, #5335cf 100%);
+  border: solid #5335cf;
+  text-align: center;
+  font-family: cursive;
+  font-size: 24px;
+  border: 10px solid black;
+height: 400px;
+  width: 60%;
+  resize: both;
+ 
+  background: linear-gradient(to top, rgba(#cffffe, 0.3), rgba(#f9f7d9, 0.3), rgba(#fce2ce, 0.3), rgba(#ffc1f3, 0.3));
+  border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23cffffe' /%3E%3Cstop offset='25%25' stop-color='%23f9f7d9' /%3E%3Cstop offset='50%25' stop-color='%23fce2ce' /%3E%3Cstop offset='100%25' stop-color='%23ffc1f3' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3'/%3E %3C/svg%3E") 1;
+
+}
+textarea {
+  resize: none;
+  
+}
+    </style>

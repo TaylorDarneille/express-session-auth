@@ -4,21 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Express Auth</title>
+    <title>General Assembly</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/CSS/style.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <% if(user){ %>
-                <li><a href="/users/profile">Profile</a></li>
-                <li><a href="/users/logout">Logout</a></li>
-            <% } else { %> 
-                <li><a href="/users/new">Sign Up</a></li>
-                <li><a href="/users/login">Login</a></li>
-            <% } %>
-        </ul>
-    </nav>
-    <h1>Express Auth Boilerplate for Project 2</h1>
+    <div class="container">
+        <img src="/images/logo_white.png" alt="Snow" style="width:100%;">
+
+            <nav>
+                <ul>
+                    <% if(user){ %>
+                        <li><a href="/users/profile" id="m">Profile</a></li>
+                        <li><a href="/users/logout" id="m">Logout</a></li>
+                        <li><a href="/users/courses" id="m">Courses</a></li>
+                    <% } else { %> 
+                        <li><a href="/users/new" id="m">Sign Up</a></li>
+                        <li><a href="/users/login" id="m">Login</a></li>
+                    <% } %>
+                </ul>
+            </nav>
+    </div>
     <%- body %> 
 </body>
 </html>
+    <style>
+        #m{
+        background: linear-gradient(135deg, #5335cf 0%, #de005e 25%, #f66e48 50%, #de005e 75%, #5335cf 100%);
+        text-align: center;
+        font-size: 60px;
+  background: -webkit-linear-gradient(135deg, #5335cf 0%, #de005e 25%, #f66e48 50%, #de005e 75%, #5335cf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    }
+    </style>

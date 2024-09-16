@@ -1,0 +1,113 @@
+
+<h1>Hello GA Folks!!</h1>
+
+<ul class="tilesWrap1">
+    <% course.forEach(element => { %>
+    <br><br>
+    <li> <a href="/users/courses/<%= element.id %>"><p><%= element.name %></p></a> <br>
+   <p2> <%= element.description %> </p2></li>
+   <br><br>
+  
+   <% });%>
+   
+    </ul>
+<style>
+    p2{
+        color: white;
+        font-size: 20px;
+    }
+    h1 {
+        background: linear-gradient(135deg, #5335cf 0%, #de005e 25%, #f66e48 50%, #de005e 75%, #5335cf 100%);
+        text-align: center;
+        font-size: 60px;
+  background: -webkit-linear-gradient(135deg, #5335cf 0%, #de005e 25%, #f66e48 50%, #de005e 75%, #5335cf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    }
+
+    body {
+	background: #262a2b;
+    
+}
+.tilesWrap1 {
+	padding: 0;
+	margin: 50px auto;
+	list-style: none;
+	text-align: center;
+    flex-wrap: wrap;
+    display: flex;
+	justify-content: space-between;
+    
+}
+.tilesWrap1 li {
+	display: inline-block;
+	width: 20%;
+	min-width: 200px;
+	max-width: 230px;
+	padding: 80px 20px 40px;
+	position: relative;
+	vertical-align: top;
+	margin: 10px;
+	font-family: 'helvetica', san-serif;
+	min-height: 25vh;
+	background: #262a2b;
+	border: 1px solid #252727;
+	/* text-align: left; */
+}
+
+.tilesWrap1 li p {
+	font-size: 30px;
+	line-height: 50px;
+	color: white;
+	margin-top: 5px;
+    background: linear-gradient(135deg, #5335cf 0%, #de005e 25%, #f66e48 50%, #de005e 75%, #5335cf 100%);
+        text-align: center;
+  background: -webkit-linear-gradient(135deg, #5335cf 0%, #de005e 25%, #f66e48 50%, #de005e 75%, #5335cf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    
+}
+.tilesWrap1 li button {
+	background: transparent;
+	border: 1px solid #b7b7b7;
+	padding: 10px 20px;
+	color: #b7b7b7;
+	border-radius: 3px;
+	position: relative;
+	transition: all 0.3s ease-in-out;
+	transform: translateY(-40px);
+	opacity: 0;
+	cursor: pointer;
+	overflow: hidden;
+}
+.tilesWrap1 li button:before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 120%;
+	background: #b7b7b7;
+	top: 0;
+	opacity: 0;
+	left: -140px;
+	border-radius: 0 20px 20px 0;
+	z-index: -1;
+	transition: all 0.3s ease-in-out;
+	
+}
+.tilesWrap1 li:hover button {
+	transform: translateY(5px);
+	opacity: 1;
+}
+
+.tilesWrap1 li:before {
+	content: '';
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+	z-index: -1;
+	background: #fff;
+	transform: skew(2deg, 2deg);
+}
+</style>
