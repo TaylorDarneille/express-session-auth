@@ -1,6 +1,8 @@
 {
   "development": {
-    "database": "auth_boilerplate",
+    "username":"postgres",
+    "password":"shaikha",
+    "database": "book_station2",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

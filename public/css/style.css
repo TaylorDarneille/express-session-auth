@@ -1,0 +1,64 @@
+.hero {
+  width: 100%;
+  height: auto;
+}
+
+.form-signup{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  margin: 0 auto;
+  border-radius: 20px;
+  margin-top: 200px;
+  border: 1px solid black;
+  padding: 20px;
+  /* height: 58vh; */
+}
+
+.submit-btn{
+  margin-top: 20px;
+  
+}
+
+.books-container{
+ 
+  background-color: white;
+  margin: 30px;
+  border-radius: 20px;
+  padding: 20px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.books-container1{
+ 
+  background-color: white;
+  /* margin: 10px; */
+  margin-top: 10px;
+  margin-left: 550px;
+  border-radius: 20px;
+  padding: 5px 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 200px;
+
+}
+.books-container2{
+ 
+  background-color: white;
+  margin: 10px;
+ margin-top: 100px;
+  border-radius: 20px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  
+
+}
+#q{
+  border-radius: 5px;
+ }

@@ -1,0 +1,92 @@
+<style>
+  div{
+      display: inline-block;
+      margin: 0 10px;
+  }
+  #fave{
+    align-items: center;
+    margin-left: 20px;
+    border-radius: 5px;
+  }
+</style>
+
+<div>
+  <div class="well">
+  <img src="<%= book.volumeInfo.imageLinks.thumbnail %>">
+  </div>
+
+ 
+
+
+  <div class="well">
+  <h4><%= book.volumeInfo.title %> </h4>
+  <p>Authors: <%= book.volumeInfo.authors%></p>
+  <p>Publisher:  <%= book.volumeInfo.publisher %></p>
+  <p>Published Date: <%= book.volumeInfo.publishedDate %></p>
+   <p>Language:
+    <% if (book.volumeInfo.language=='ar'){ %>
+   Arabic
+   <%}else{%>
+    English 
+    <%}%>
+   </p>
+  <p>Categories: <%= book.volumeInfo.categories%></p>
+  <p>Description: <%= book.volumeInfo.description %></p>
+  </div>
+</div>
+
+<form class="fave" action="/users/profile" method="POST" >
+    <input type="hidden" name="bookTitle" id="bookTitle" value="<%= book.volumeInfo.title%>">
+    <input type="hidden" name="bookId" id="bookId" value="<%=book.id%> ">
+  <input type="hidden" name="bookImage" id="bookImage" value="<%= book.volumeInfo.imageLinks.smallThumbnail%>">
+   
+
+  <button id="fave" type="submit">My Favorite ⭐️</button>
+    
+
+</form>
+
+
+
+<hr />
+<h2>Reviews</h2>
+<ul>
+    <% reviews.forEach(function(item) { %>
+        <div class="well">
+          <p> 
+            <li><%= item.user.name %> :</li>
+            <%= item.review %>
+             
+          </p>
+       
+         
+          <% }) %>
+        </div>
+
+</ul>
+<hr />
+<h3>Review on this Book</h3>
+<form action="/books/<%=book.id%>" method="POST">
+ 
+
+  <div class="form-group">
+    
+    <textarea type="text" class="form-control" id="review" name="review" required></textarea>
+  </div>
+
+  <input type="submit" class="btn btn-primary">
+</form>
+
+
+
+
+
+
+
+
+   
+
+
+
+
+

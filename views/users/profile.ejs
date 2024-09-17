@@ -1,1 +1,51 @@
-<h2>Hello, <%= user.email%> :)</h2>
+
+<style>
+
+ h2, h3 {
+    text-align: center;
+
+  }
+    li{
+        color: black;
+    }
+    a:link {
+     text-decoration: none;
+     
+    }
+    
+   
+    #dele{
+        margin-left: 10px;
+        margin-top: 30px;
+        border-radius: 5px;
+    }
+
+    .well{
+        padding: 10px;
+        align-items: center;
+        text-align: center;
+    }
+</style>
+
+
+<h2>Hello, <%= user.name%> ❤️ </h2>
+
+<h3>List of Your favorite books</h4>
+
+<% faves.forEach(b => { %>
+ <div class="books-container1">
+     <a href="../books/<%= b.bookId %>">
+         <li><%= b.bookTitle %></li>
+     
+         <img src="<%= b.bookImage%>" alt="">
+ 
+     </a>
+
+     <form method="POST" action="/users/profile/<%= b.bookId %>?_method=DELETE">
+         <button id="dele" type="submit">Delete</button>
+     </form>
+ </div>
+
+    
+    
+<% })  %>
