@@ -1,0 +1,134 @@
+<h2>Booking page</h2>
+
+<form class='comment-section' method="POST" action="/users/book/<%= productId %>">
+    <!-- <label for="name">Your Name: </label>
+    <input type="text" name="name" id="name" value>
+    <div class="form-group">
+      <label for="Email">Email</label>
+      <input type="text" name="email" required value></input><br>
+      <label for="Number">Mobile</label>
+      <input type="number" name="mobile" required></input> -->
+
+      <link rel="stylesheet" href="https://cdn.tailgrids.com/tailgrids-fallback.css" />
+
+      <!-- ====== Contact Section Start -->
+      <section class="bg-white py-20 lg:py-[120px] overflow-hidden relative z-10">
+         <div class="container">
+            <div class="flex flex-wrap lg:justify-between -mx-4">
+               <div class="w-full lg:w-1/2 xl:w-6/12 px-4">
+                  <div class="max-w-[570px] mb-12 lg:mb-0">
+                     <h2>
+                        Enter Your Details Below For Securing Your Order
+                     </h2>
+                     <p class="text">
+                      Booking with us is simple and easy. Just fill in the booking form below and we will email your itinerary and payment details. 
+                      Please don't forget you have to submit the payment for your reservation in 24 hours after submitting the booking form.
+                     </p>
+      
+                  </div>
+               </div>
+               <div class="details">
+                  <div class="name">
+                     <form>
+                        <div class="mb-6">
+                           <input
+                              type="text"
+                              placeholder="Your Name"
+                              class="
+                              w-full
+                              rounded
+                              py-3
+                              px-[14px]
+                              text-body-color text-base
+                              border border-[f0f0f0]
+                              outline-none
+                              focus-visible:shadow-none
+                              focus:border-primary
+                              "
+                              />
+                        </div>
+                        <div class="email">
+                           <input
+                              type="email"
+                              placeholder="Your Email"
+                              class="
+                              w-full
+                              rounded
+                              py-3
+                              px-[14px]
+                              text-body-color text-base
+                              border border-[f0f0f0]
+                              outline-none
+                              focus-visible:shadow-none
+                              focus:border-primary
+                              "
+                              />
+                        </div>
+                        <div class="phone">
+                           <input
+                              type="text"
+                              placeholder="Your Phone"
+                              class="
+                              w-full
+                              rounded
+                              py-3
+                              px-[14px]
+                              text-body-color text-base
+                              border border-[f0f0f0]
+                              outline-none
+                              focus-visible:shadow-none
+                              focus:border-primary
+                              "
+                              />
+                        </div>
+                       
+                             
+                        </div>
+                        <div>
+                           <button
+                              type="submit"
+                              class="
+                              w-full
+                              text-white
+                              bg-primary
+                              rounded
+                              border border-primary
+                              p-3
+                              transition
+                              hover:bg-opacity-90
+                              "
+                              >
+                           Send Message
+                           </button>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+    <!-- <input type="submit" class="btn btn-primary"> -->
+  </form>
+  <style>
+    .details{
+      text-align: center;
+    }
+    body{
+      background-image:url(https://cdn.shopify.com/s/files/1/0612/7281/7886/products/download_1_1500x.jpg?v=1645067442);
+      background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;  
+    }
+    h2{
+      text-align: center;
+      color:aquamarine
+    }
+    p{
+      text-align: center;
+      font-size: 30px;
+    }
+    .text{
+      color: aliceblue;
+    }
+  </style>
+  <a href="/">&larr; Back Home</a>

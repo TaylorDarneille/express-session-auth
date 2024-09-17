@@ -7,18 +7,51 @@
     <title>Express Auth</title>
 </head>
 <body>
+    <style>
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+         background-color: rgba(80, 230, 247, 0.499);
+         background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9u98EuYQ5SrJnTmhxqaQZmxb1XuCQxSwGcA&usqp=CAU");
+        }
+        
+        li {
+          float: left;
+          padding: 20px;
+        }
+        
+        li a {
+          display: block;
+          color: rgb(30, 214, 255);
+          text-align: center;
+          text-decoration: none;
+          font-size: 20px;
+        }
+        
+        li a:hover {
+          background-color: rgb(69, 255, 246);
+        }
+        h2{
+            font-size: 30px;
+          color: teal;
+        }
+        </style>
     <nav>
         <ul>
             <% if(user){ %>
                 <li><a href="/users/profile">Profile</a></li>
                 <li><a href="/users/logout">Logout</a></li>
+                <li><a href="/users/home">Home</a></li>
+                <li><a href="/users/booking">Booking</a></li>
             <% } else { %> 
                 <li><a href="/users/new">Sign Up</a></li>
                 <li><a href="/users/login">Login</a></li>
             <% } %>
         </ul>
     </nav>
-    <h1>Express Auth Boilerplate for Project 2</h1>
+    <!-- <h1>Express Auth Boilerplate for Project 2</h1> -->
     <%- body %> 
 </body>
 </html>

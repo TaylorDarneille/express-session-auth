@@ -5,12 +5,18 @@ const cryptojs = require('crypto-js')
 require('dotenv').config()
 const bcrypt = require('bcrypt')
 
+
+
 router.get('/new', (req, res)=>{
     res.render('users/new.ejs')
 })
 
 router.post('/', async (req, res)=>{
-    const [newUser, created] = await db.user.findOrCreate({where:{email: req.body.email}})
+    const [newUser, created] = await db.user.findOrCreate({
+        where:{
+            name: req.body.name,
+            email: req.body.email
+        }})
     if(!created){
         console.log('user already exists')
         res.render('users/login.ejs', {error: 'Looks like you already have an account! Try logging in :)'})
@@ -54,6 +60,50 @@ router.get('/logout', (req, res)=>{
 
 router.get('/profile', (req, res)=>{
     res.render('users/profile.ejs')
+})  
+router.get('/book/:productId', (req, res)=>{
+    res.render('users/book.ejs', {productId: req.params.productId})
+})
+router.get('/', async(req, res)=>{
+        res.render('new.ejs', {allProducts})
 })
 
+router.get('/home', async(req, res)=>{
+    // try {
+        let allProducts = await db.products.findAll()
+        // res.json(allProducts)
+        res.render('home.ejs', {allProducts})
+    // } catch(err) {
+    //     res.send(err)
+    // }
+})
+router.get('/booking', async(req, res)=>{
+    
+        let allOrders = await db.orders.findAll()
+        res.render('users/order.ejs', {allOrders})
+})
+
+    router.post('/book/:productId', async (req, res) => {
+        
+        try {
+            // const user = await db.user.findOne({ where: { 
+            //     email: req.body.email}
+            const user = res.locals.user
+        
+           
+            const product = await db.products.findByPk(parseInt(req.params.productId))
+      
+           await user.addProduct(product)
+            
+            res.render('users/product.ejs', {product: product})
+        } catch(err) {
+            console.log('error catch reached!')
+            console.log(err)
+            res.send(err)
+        }
+    })
+    
+    router.get('/book/allProducts', async (req,res) => {
+        
+    })
 module.exports = router
