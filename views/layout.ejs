@@ -1,24 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Express Auth</title>
+    <title>ALHSS-JEWELLERY</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo+Play&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+  <style>
+
+
+  
+
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+    
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+    h1 {
+        font-family: 'Aref Ruqaa', serif;
+        font-size: 50px;
+        padding: 20px;
+    }
+    p{
+        font-family: 'Cairo Play', cursive;
+        font-size: 20px;
+        padding:6px;
+
+    }
+  
+  </style>
 </head>
 <body>
+    <h1> ALHSS Jewellery| مـجـوهـرات الحـصّ </h1>      
+
+    <p>jewellery design concept that embodies the essence and beauty of the Arabic Calligraphy.</p>
     <nav>
         <ul>
             <% if(user){ %>
-                <li><a href="/users/profile">Profile</a></li>
+                <!-- <li><a href="/users/profile">Profile</a></li> -->
+
                 <li><a href="/users/logout">Logout</a></li>
             <% } else { %> 
                 <li><a href="/users/new">Sign Up</a></li>
                 <li><a href="/users/login">Login</a></li>
             <% } %>
+
         </ul>
     </nav>
-    <h1>Express Auth Boilerplate for Project 2</h1>
+  </div>
+</div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+     <li><a href="/users/about">About</a></li>
+        <li><a href="/users/home">Home</a></li>
+        <li><a href="/products">Products</a></li>
+        <li><a href="/users/contact">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/users/profile"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+        <li><a href="/users/cart"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+  </div>
+</div>
+</nav>
     <%- body %> 
 </body>
 </html>

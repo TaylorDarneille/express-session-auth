@@ -4,10 +4,26 @@ const router = express.Router()
 const cryptojs = require('crypto-js')
 require('dotenv').config()
 const bcrypt = require('bcrypt')
+const axios = require('axios')
 
 router.get('/new', (req, res)=>{
     res.render('users/new.ejs')
 })
+
+router.get('/about', (req, res)=>{
+    res.render('about.ejs')
+})
+
+router.get('/home', (req, res)=>{
+    res.render('home.ejs')
+})
+
+router.get('/contact', (req, res)=>{
+    res.render('contact.ejs')
+})
+
+
+
 
 router.post('/', async (req, res)=>{
     const [newUser, created] = await db.user.findOrCreate({where:{email: req.body.email}})
@@ -46,6 +62,7 @@ router.post('/login', async (req, res)=>{
     }
 })
 
+
 router.get('/logout', (req, res)=>{
     console.log('logging out')
     res.clearCookie('userId')
@@ -55,5 +72,9 @@ router.get('/logout', (req, res)=>{
 router.get('/profile', (req, res)=>{
     res.render('users/profile.ejs')
 })
+router.get('/cart', (req, res)=>{
+    res.render('cart.ejs')
+})
+
 
 module.exports = router
